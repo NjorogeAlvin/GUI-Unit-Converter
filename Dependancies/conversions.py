@@ -1,5 +1,5 @@
 #Tells Python to Export all the classes
-__add__ = ["LengthConverter", "WeightConverter", "TemperatureConverter", "SpeedConverter", "TimeConverter", "DataConverter"]
+__all__ = ["LengthConverter", "WeightConverter", "TemperatureConverter", "SpeedConverter", "TimeConverter", "DataConverter"]
 
 #Length Converter
 class LengthConverter:
@@ -64,31 +64,32 @@ class SpeedConverter:
 class TimeConverter:
         def __init__(self, minutes):
             self.minutes = minutes
-            self.seconds = self.minutes * 60
             
-        def seconds_to_minutes(self,):
-            return self.seconds / 60
+        def minutes_to_seconds(self,):
+            return self.minutes * 60
     
-        def seconds_to_hours(self,):
-            return self.seconds / 3600
+        def minutes_to_hours(self,):
+            return self.minutes / 60
         
-        def seconds_to_days(self,):
-            return self.seconds / 86400
+        def minutes_to_days(self,):
+            return self.minutes / 1440
 
 #DataConverter
 class DataConverter:
         def __init__(self, kilobytes):
             self.kilobytes = kilobytes
-            self.bytes = self.kilobytes * 1024
             
-        def bytes_to_kilobytes(self,):
-            return self.bytes / 1024
+        def kilobytes_to_kilobytes(self,):
+            return self.kilobytes
     
-        def bytes_to_megabytes(self,):
-            return self.bytes / (1024 ** 2)
+        def kilobytes_to_megabytes(self,):
+            return self.kilobytes / 1024
         
-        def bytes_to_gigabytes(self,):
-            return self.bytes / (1024 ** 3)
+        def kilobytes_to_gigabytes(self,):
+            return self.kilobytes / (1024 ** 2)
+        
+        def kilobytes_to_bytes(self,):
+            return self.kilobytes * 1024
         
 #May Add Other Things
 
